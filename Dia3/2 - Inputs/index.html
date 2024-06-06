@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingreso de Usuario</title>
+</head>
+<body>
+    <p>Ingresa tu nombre</p>
+    <input type="text" id="nombreUsuario">
+    <button onclick="saludarUsuario()">Saludar a usuario</button>
+    
+    <script>
+        function saludarUsuario(){
+            if (document.getElementById("nombreUsuario").value == ""){
+                alert("No has introducido un nombre pero, Hola!!!");
+            } else {
+                alert("Hola " + document.getElementById("nombreUsuario").value)
+            }
+        }
+    </script>
+</body>
+</html>

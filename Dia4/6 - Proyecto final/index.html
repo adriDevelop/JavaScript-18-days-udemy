@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="calculadora.js"></script>
+    <title>Calculadora</title>
+</head>
+<body>
+    <div style="width: max-content; background-color: green;">
+        <input type="number" style="width: 50%;" id="num1"><input type="number" style="width: 50%;" id="num2">
+        <div style="width: wrap-parent;">
+            <button onclick="sumar()" style="width: 25%;">+</button><button onclick="restar()" style="width: 25%;">-</button><button onclick="multiplicar()" style="width: 25%;">*</button><button onclick="dividir()" style="width: 25%;">%</button>
+        </div>
+        <button style="width: 50%;" onclick="potencia()">Potencia</button><button style="width: 50%;" onclick="raiz()">Raiz</button>
+        <button style="width: 50%;" onclick="absoluto()">Absoluto</button><button style="width: 50%;" onclick="random()">Random</button>
+        <h2 id="resultado">--</h2>
+        <button style="width: 33.3%;" onclick="round()">Round</button><button style="width: 33.3%;" onclick="floor()">Floor</button><button style="width: 33.3%;" onclick="ceil()">Ceil</button>
+    </div>
+</body>
+</html>

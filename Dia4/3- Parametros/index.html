@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones con return</title>
+</head>
+<body>
+
+    <p>Ingrese el numero 1</p>
+    <input type="number" id="numero1">
+    <p>Ingrese el numero 2</p>
+    <input type="number" id="numero2">
+    <button onclick="mostrarResultado()">resultado</button>
+    <h2 id="resultado"></h2>
+
+    <script>
+        function sumar(numero1, numero2){
+            resultado = +numero1 + + numero2;
+            return resultado;
+        }
+
+        function mostrarResultado(){
+            let num1 = document.getElementById("numero1");
+            let num2 = document.getElementById("numero2");
+            let resultadoTexto = document.getElementById("resultado");
+            let resultadoSuma = sumar(num1.value, num2.value);
+            resultadoTexto.textContent = resultadoSuma;
+        }
+    </script>
+</body>
+</html>

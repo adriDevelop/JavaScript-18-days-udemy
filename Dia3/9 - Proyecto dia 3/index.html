@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto final dia 3</title>
+</head>
+<body onload="temporizadorCorriendo()">
+        <h2 id="temporizador">30</h2>
+        <p>Respuesta pregunta 1:</p>
+        <input type="text" id="pregunta1">
+        <p>Respuesta pregunta 2:</p>
+        <input type="text" id="pregunta2">
+        <p>Respuesta pregunta 3:</p>
+        <input type="text" id="pregunta3">
+        <p>Respuesta pregunta 4:</p>
+        <input type="text" id="pregunta4">
+        <p>Respuesta pregunta 5:</p>
+        <input type="text" id="pregunta5">
+        <button id="reenviar" onclick="reiniciar()" style="background-color: red;">Reenviar</button>
+        <button id="Enviar" onclick="enviar()" style="background-color: green">Enviar</button>
+
+        <script>
+            // Declaro las funciones y recojo lo que introduzca el usuario.
+            let pregunta1 = document.getElementById("pregunta1");
+            let pregunta2 = document.getElementById("pregunta2");
+            let pregunta3 = document.getElementById("pregunta3");
+            let pregutna4 = document.getElementById("pregunta4");
+            let pregunta5 = document.getElementById("pregunta5");
+
+            // Fecha de hoy.
+            let fechaHoy = new Date();
+            let fechaSpain = fechaHoy.toLocaleDateString('es-ES');
+
+            // Temporizador.
+            let temporizador = document.getElementById("temporizador");
+            let tiempoTerminado;
+            let intervaloDeTiempo;
+
+            function temporizadorCorriendo(){
+                tiempoTerminado = setTimeout(terminoTiempo, 30*1000)
+                intervaloDeTiempo = setInterval(ticTac, 1000);
+            }
+
+            function ticTac(){
+            let tiempo = temporizador.textContent;
+            temporizador.textContent = tiempo - 1;
+        }
+
+            function terminoTiempo(){
+                clearTimeout(tiempoTerminado);                             
+                clearInterval(intervaloDeTiempo);
+                alert("Se ha acabado el tiempo");
+                reiniciar();
+            }
+
+            function enviar(){
+                alert("Fecha de hoy: " + fechaSpain + "\n" +
+                "pregunta 1: " + pregunta1.value + "\n" +
+                "pregunta 2: " + pregunta2.value + "\n" +
+                "pregunta 3: " + pregunta3.value + "\n" +
+                "pregunta 4: " + pregunta4.value + "\n" +
+                "pregunta 5: " + pregunta5.value + "\n" );
+                reiniciar();
+            }
+
+            function reiniciar(){
+                location.reload();
+            }
+        </script>
+</body>
+</html>
